@@ -168,6 +168,27 @@ h1 {
   color:var(--gold);
 }
 
+/* CONTRACT ADDRESS */
+.ca-wrapper {
+  margin-top:14px;
+  font-size:0.75rem;
+  color:var(--muted);
+  cursor:pointer;
+  display:inline-block;
+  user-select:none;
+  opacity:0.7;
+  padding:6px 12px;
+  border-radius:8px;
+  background: rgba(255,255,255,0.06);
+  transition: background .2s ease, color .2s ease;
+}
+
+.ca-wrapper:hover {
+  opacity:1;
+  color: var(--gold);
+  background: rgba(245,195,106,0.15);
+}
+
 /* SECTIONS */
 section {
   padding:80px 20px;
@@ -248,13 +269,13 @@ footer {
 </div>
 
 <div class="socials">
-  <a href="https://t.me/yesbossonly" target="_blank">
+  <a href="https://x.com/Yesboss_only" target="_blank">
     <svg viewBox="0 0 24 24">
       <path d="M18.9 2H22l-7.1 8.1L23.3 22h-6.7l-5.3-7-6.1 7H2l7.6-8.7L.7 2h6.8l4.8 6.3L18.9 2z"/>
     </svg>
   </a>
 
-  <a href="https://t.me/YESBOSS" target="_blank">
+  <a href="https://t.me/yesbossonly" target="_blank">
     <svg viewBox="0 0 24 24">
       <path d="M22 3L2.9 10.6c-1.3.5-1.3 1.2-.2 1.5l4.9 1.5 1.9 5.8c.2.5.4.7.8.7.4 0 .6-.2.9-.4l2.8-2.7 5.7 4.2c1 .6 1.7.3 2-.9L24 4.6c.4-1.5-.6-2.2-2-1.6z"/>
     </svg>
@@ -265,7 +286,12 @@ footer {
   <div class="badge">SOLANA MEME COIN</div>
   <h1 class="glitch" data-text="$YESBOSS">$YESBOSS</h1>
   <div class="claim">
-    <strong>America leads.</strong><br>Others follow.</strong><br>CA: 4R61g4sjqpckK5syYnzHLuoofmq191CFU4nG8bCJpump
+    <strong>America leads.</strong><br>
+    Others follow.
+  </div>
+
+  <div class="ca-wrapper" id="ca-wrapper">
+    CA: 4R61g4sjqpckK5syYnzHLuoofmq191CFU4nG8bCJpump
   </div>
 </div>
 
@@ -289,6 +315,20 @@ footer {
 <a href="https://join.pump.fun/HSag/e4peq3sd" target="_blank" class="buy">
   BUY $YESBOSS
 </a>
+
+<script>
+const caWrapper = document.getElementById("ca-wrapper");
+caWrapper.addEventListener("click", () => {
+  navigator.clipboard.writeText("4R61g4sjqpckK5syYnzHLuoofmq191CFU4nG8bCJpump");
+  caWrapper.textContent = "Copied ✓";
+  caWrapper.style.color = "#f5c36a";
+
+  setTimeout(() => {
+    caWrapper.textContent = "CA: 4R61g4sjqpckK5syYnzHLuoofmq191CFU4nG8bCJpump";
+    caWrapper.style.color = "var(--muted)";
+  }, 1500);
+});
+</script>
 
 </body>
 </html>
