@@ -26,6 +26,66 @@ body {
   overflow-x:hidden;
 }
 
+/* TICKER */
+.ticker {
+  position:fixed;
+  top:0;
+  width:100%;
+  background:#000;
+  color:var(--gold);
+  font-size:11px;
+  letter-spacing:2px;
+  padding:8px 0;
+  overflow:hidden;
+  z-index:30;
+}
+
+.ticker span {
+  display:inline-block;
+  padding-left:100%;
+  white-space:nowrap;
+  animation:ticker 15s linear infinite;
+}
+
+@keyframes ticker {
+  from { transform:translateX(0); }
+  to { transform:translateX(-100%); }
+}
+
+/* SOCIALS */
+.socials {
+  position:fixed;
+  top:46px;
+  right:16px;
+  display:flex;
+  gap:10px;
+  z-index:25;
+}
+
+.socials a {
+  width:44px;
+  height:44px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:10px;
+  background:rgba(255,255,255,0.06);
+  border:1px solid rgba(255,255,255,0.15);
+  backdrop-filter: blur(6px);
+  transition:transform .2s ease, background .2s ease;
+}
+
+.socials a:hover {
+  transform:scale(1.08);
+  background:rgba(245,195,106,0.25);
+}
+
+.socials svg {
+  width:20px;
+  height:20px;
+  fill:var(--gold);
+}
+
 /* HERO */
 .hero {
   min-height:100vh;
@@ -41,17 +101,15 @@ body {
   content:"";
   position:absolute;
   inset:0;
-  background:
-    url("logocoin.png")
-    center 70% / 90% no-repeat; /* Bild tiefer und größer */
-  opacity:1; /* vollständig sichtbar */
-  animation: float 6s ease-in-out infinite;
+  background:url("logocoin.png") center 70% / 90% no-repeat;
+  opacity:1;
+  animation:float 6s ease-in-out infinite;
   pointer-events:none;
 }
 
 @keyframes float {
-  0%,100% { transform: translateY(0); }
-  50% { transform: translateY(-12px); }
+  0%,100% { transform:translateY(0); }
+  50% { transform:translateY(-12px); }
 }
 
 .badge {
@@ -86,13 +144,13 @@ h1 {
 .glitch::before {
   top:-2px;
   color:#ff3b3b;
-  animation: glitch 2s infinite linear alternate-reverse;
+  animation:glitch 2s infinite linear alternate-reverse;
 }
 
 .glitch::after {
   top:2px;
   color:#3b6cff;
-  animation: glitch 1.5s infinite linear alternate;
+  animation:glitch 1.5s infinite linear alternate;
 }
 
 @keyframes glitch {
@@ -104,7 +162,6 @@ h1 {
   margin-top:14px;
   font-size:1.1rem;
   color:var(--muted);
-  line-height:1.4;
 }
 
 .claim strong {
@@ -134,7 +191,7 @@ section {
 
 .card p {
   color:var(--muted);
-  font-size:0.95rem;
+  font-size:.95rem;
   line-height:1.6;
 }
 
@@ -150,7 +207,7 @@ section {
   color:var(--gold);
 }
 
-/* BUY */
+/* BUY BUTTON */
 .buy {
   position:fixed;
   bottom:16px;
@@ -175,32 +232,6 @@ section {
   100% { transform:scale(1); }
 }
 
-/* TICKER */
-.ticker {
-  position:fixed;
-  top:0;
-  width:100%;
-  background:#000;
-  color:var(--gold);
-  font-size:11px;
-  letter-spacing:2px;
-  padding:8px 0;
-  overflow:hidden;
-  z-index:30;
-}
-
-.ticker span {
-  display:inline-block;
-  padding-left:100%;
-  white-space:nowrap;
-  animation:ticker 15s linear infinite;
-}
-
-@keyframes ticker {
-  from { transform:translateX(0); }
-  to { transform:translateX(-100%); }
-}
-
 footer {
   text-align:center;
   font-size:12px;
@@ -216,28 +247,32 @@ footer {
   <span>KNEEL OR COPE · AMERICA LEADS · $YESBOSS · KNEEL OR COPE ·</span>
 </div>
 
+<div class="socials">
+  <a href="https://t.me/yesbossonly" target="_blank">
+    <svg viewBox="0 0 24 24">
+      <path d="M18.9 2H22l-7.1 8.1L23.3 22h-6.7l-5.3-7-6.1 7H2l7.6-8.7L.7 2h6.8l4.8 6.3L18.9 2z"/>
+    </svg>
+  </a>
+
+  <a href="https://t.me/YESBOSS" target="_blank">
+    <svg viewBox="0 0 24 24">
+      <path d="M22 3L2.9 10.6c-1.3.5-1.3 1.2-.2 1.5l4.9 1.5 1.9 5.8c.2.5.4.7.8.7.4 0 .6-.2.9-.4l2.8-2.7 5.7 4.2c1 .6 1.7.3 2-.9L24 4.6c.4-1.5-.6-2.2-2-1.6z"/>
+    </svg>
+  </a>
+</div>
+
 <div class="hero">
   <div class="badge">SOLANA MEME COIN</div>
   <h1 class="glitch" data-text="$YESBOSS">$YESBOSS</h1>
   <div class="claim">
-    <strong>America leads.</strong><br>
-    Others follow.
+    <strong>America leads.</strong><br>Others follow.
   </div>
 </div>
 
 <section>
-  <div class="card">
-    <h3>Dominance</h3>
-    <p>Power is not voted. It is enforced.</p>
-  </div>
-  <div class="card">
-    <h3>Hierarchy</h3>
-    <p>Allies exist until orders arrive.</p>
-  </div>
-  <div class="card">
-    <h3>Momentum</h3>
-    <p>No roadmap. No excuses. Just pressure.</p>
-  </div>
+  <div class="card"><h3>Dominance</h3><p>Power is not voted. It is enforced.</p></div>
+  <div class="card"><h3>Hierarchy</h3><p>Allies exist until orders arrive.</p></div>
+  <div class="card"><h3>Momentum</h3><p>No roadmap. No excuses. Just pressure.</p></div>
 </section>
 
 <section>
@@ -248,8 +283,7 @@ footer {
 </section>
 
 <footer>
-  $YESBOSS is a meme coin.<br>
-  No utility. No mercy.
+  $YESBOSS is a meme coin.<br>No utility. No mercy.
 </footer>
 
 <a href="https://join.pump.fun/HSag/e4peq3sd" target="_blank" class="buy">
@@ -257,4 +291,4 @@ footer {
 </a>
 
 </body>
-  </html>
+</html>
