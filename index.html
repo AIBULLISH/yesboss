@@ -9,8 +9,6 @@
 :root {
   --bg:#070b14;
   --gold:#f5c36a;
-  --red:#c62828;
-  --blue:#0d1b3d;
   --text:#f2f2f2;
   --muted:#9aa3b2;
 }
@@ -31,7 +29,7 @@ body {
 /* HERO */
 .hero {
   min-height:100vh;
-  padding:140px 20px 120px; /* ← TEXT HÖHER */
+  padding:140px 20px 120px;
   display:flex;
   flex-direction:column;
   align-items:center;
@@ -43,8 +41,10 @@ body {
   content:"";
   position:absolute;
   inset:0;
-  background:url("logocoin.png") center/85% no-repeat;
-  opacity:0.08;
+  background:
+    url("logocoin.png")
+    center 70% / 90% no-repeat; /* ↓ weiter runter + größer */
+  opacity:0.16;                /* ↑ deutlich heller */
   animation: float 6s ease-in-out infinite;
   pointer-events:none;
 }
@@ -150,7 +150,7 @@ section {
   color:var(--gold);
 }
 
-/* STICKY BUY */
+/* BUY */
 .buy {
   position:fixed;
   bottom:16px;
@@ -230,12 +230,10 @@ footer {
     <h3>Dominance</h3>
     <p>Power is not voted. It is enforced.</p>
   </div>
-
   <div class="card">
     <h3>Hierarchy</h3>
     <p>Allies exist until orders arrive.</p>
   </div>
-
   <div class="card">
     <h3>Momentum</h3>
     <p>No roadmap. No excuses. Just pressure.</p>
@@ -257,4 +255,4 @@ footer {
 <a href="#" class="buy">BUY $YESBOSS</a>
 
 </body>
-  </html>
+</html>
